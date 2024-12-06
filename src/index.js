@@ -9,17 +9,13 @@ const magaJulia = new Mago('Julia', 8, 'Gelo', 7, 10);
 const arqueiroLegolas = new Arqueiro('Legolas', 6, 4);
 const arqueiroMagoXavier = new ArqueiroMago('Xavier', 7, 10, 'Ar', 5, 8);
 
-// const personagemPedrinho = new Personagem('Pedrinho', 5, 'Mago');
-// const personagemJose = new Personagem('Jose', 3, 'Arqueiro');
-
-// const personagens = [personagemPedrinho, personagemJose];
 const personagens = [magoAntonio, magaJulia, arqueiroLegolas, arqueiroMagoXavier];
 
 new PersonagemView(personagens).render();
 
-// console.log(personagemJose.vida);
-console.log(new Mago('Gelo', 7, 9));
-console.log(Personagem.verificarVencedor(arqueiroLegolas, magoAntonio));
+// console.log(new Mago('Gelo', 7, 9));
+// console.log(Personagem.verificarVencedor(arqueiroLegolas, magoAntonio));
+console.log(arqueiroLegolas);
 
 // AULA 1:
 // const personagemPedrinho = {
