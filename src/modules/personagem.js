@@ -11,8 +11,27 @@ export class Personagem {
         this.#level = 1;
     }
 
+    aumentarLevel() {
+        this.level += 1;
+    }
+
+    diminuirLevel() {
+        this.level -= 1;
+    }
+
+    // O get level() é chamado diretamente pela classe PersonagemView quando tenta acessar o level para realizar a renderização.
+    // O get é utilizado para retornar o valor de um propriedade protegida que está sendo acessada fora da classe:
     get level() {
         return this.#level;
+    }
+
+    // O set serve para criar uma lógica de negócio onde há a necessidade de alterar o valor de uma propriedade privada — justamente o que está acontecendo nos métodos aumentarLevel() e diminuirLevel().
+    // O set verifica o valor de novoLevel, e a cada tentativa de modificação atribuímos o seu valor ao this.level. O set level() também é chamado pela PersonagemView, mas de forma indireta. Na verdade, quem chama essa função são os métodos aumentarLevel() e diminuirLevel(). Este foi o motivo de termos retirado o sinal # dos métodos. Para chamarmos o método set level(), a chamada precisa ter o mesmo nome da função — ou seja, level.
+
+    set level(novoLevel) {
+        if(novoLevel >= 1 && novoLevel <= 20) {
+            this.#level = novoLevel;
+        }
     }
 
     obterInsignia() {
